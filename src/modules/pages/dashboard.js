@@ -247,13 +247,13 @@ const MenuList = () => {
               <User>
               Email
               </User>
-              <input className="inputdiv" onChange={(e) => setPhone(e.target.value)}>{data1.email}</input>
+              <input className="inputdiv" onChange={(e) => setPhone(e.target.value)}></input>
               </div>
               <div className="id">
               <User>
               Phone Number
               </User>
-              <input className="inputdiv" onChange={(e) => setEmail(e.target.value)}>{data1.phone}</input>
+              <input className="inputdiv" onChange={(e) => setEmail(e.target.value)}></input>
               </div>
                 <Row style={{justifyContent: "flex-end", marginTop: "20px"}}>
                   <Button onClick={createUsers}>Accept</Button>
