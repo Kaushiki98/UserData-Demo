@@ -174,25 +174,30 @@ const MenuList = () => {
   const handleClickOpen = () => {
     setOpen(true);
   };
+  const [id, setId] = React.useState("")
+  const [name, setName] = React.useState("")
+  const [phone, setPhone] = React.useState("")
+  const [email, setEmail] = React.useState("")
 
   const [data1, setData1] = React.useState("")
 
 
-  const createUsers = async(req) => {
+  async function createUsers() {
     const request = {
-      id: "req.id",
-      name: "req.name",
-      phone: "req.phone",
-      email:" req.email"
-    }
+      id: id,
+      name: name,
+      phone: phone,
+      email: email
+    };
     const response = await UserData.createUser(request)
     return setData1(response)
-    console.log("7890bgh",response);
+    console.log("23456789",response)
   }
 
 
   return (
     <MainComponent>
+    {console.log(setPhone)}
       <Text>
         Contact
       </Text>
@@ -230,25 +235,25 @@ const MenuList = () => {
               <User>
               Id
               </User>
-              <input className="inputdiv">{data1.id}</input>
+              <input className="inputdiv" onChange={(e) => setId(e.target.value)}></input>
               </div>
               <div className="id">
               <User>
               Name
               </User>
-              <input className="inputdiv">{data1.name}</input>
+              <input className="inputdiv" onChange={(e) => setName(e.target.value)}></input>
               </div>
               <div className="id">
               <User>
               Email
               </User>
-              <input className="inputdiv">{data1.email}</input>
+              <input className="inputdiv" onChange={(e) => setPhone(e.target.value)}>{data1.email}</input>
               </div>
               <div className="id">
               <User>
               Phone Number
               </User>
-              <input className="inputdiv">{data1.phone}</input>
+              <input className="inputdiv" onChange={(e) => setEmail(e.target.value)}>{data1.phone}</input>
               </div>
                 <Row style={{justifyContent: "flex-end", marginTop: "20px"}}>
                   <Button onClick={createUsers}>Accept</Button>

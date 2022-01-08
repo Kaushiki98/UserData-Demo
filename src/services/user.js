@@ -6,9 +6,9 @@ export default {
 };
 
 async function createUser(requestdata) {
-  let url = "http://localhost:3000/send-data"
-  console.log(requestdata);
+  let url = "http://localhost:3000/"+"send-data"
   return httpService(
+    {mode: 'no-cors'},
     'POST',
     { "Content-Type": httpConstants.CONTENT_TYPE.APPLICATION_JSON },
     requestdata,
@@ -28,4 +28,4 @@ async function createUser(requestdata) {
     .catch(function (err) {
       return Promise.reject(err);
     });
-  }
+}

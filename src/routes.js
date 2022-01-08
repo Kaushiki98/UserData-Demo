@@ -4,8 +4,7 @@ import Page from "./modules/pages";
 
 const UserData = () => {
     return (
-
-                        <Route exact path={'/'} component={Page}/>
+      <Route exact path={'/'} component={Page}/>
     )
 }
 
